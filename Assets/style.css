@@ -1,0 +1,54 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    background-color: slategray;
+    color:white;
+    text-align: center;
+    padding: 10px;
+}
+
+.leftAside{
+    width: 28%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid gainsboro;
+    height: 80vh;
+    
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.currentInfo{
+    width: 100%;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid gainsboro;
+}
+
+.forecast{
+    width: 100%;
+    margin-top: 50px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid gainsboro;
+}
+
+.rightAside{
+    display: flex;
+    flex-wrap: wrap;
+    width: 69%;
+}
+
+/* .currentInfo{
+    float: right;
+} */
