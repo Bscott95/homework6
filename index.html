@@ -16,7 +16,7 @@
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-
+    <!-- start of main -->
     <main>
         <!-- left aside -->
         <aside class="leftAside">
@@ -28,57 +28,66 @@
             <!-- list of previous seraches -->
             <div class="citiesContainer">
                 <ul id="savedCities" class="list-group">
-
                 </ul>
             </div>
         </aside>
         <!-- current info -->
         <aside class="rightAside">
             <div class="currentInfo">
-                <h3><span id="currentCity">City Name</span> <span id="currentDate">todays date</span> </h3>
-                <h5>Temperature: <span id="currentTemp">num</span></h5>
-                <h5>Humidity: <span id="currentHumidity">num</span></h5>
-                <h5>Wind Speed: <span id="currentWindSpeed">num</span></h5>
-                <h5>UV Index: <span id="currentUVIndex">num</span></h5>
-
+                <h3><span id="currentCity">City Name</span> <span><img id="currentIcon" src=""></span></h3>
+                <h4><span id="currentDate">todays date</span> </h4>
+                <h6>Temperature: <span id="currentTemp">num</span></h6>
+                <h6>Humidity: <span id="currentHumidity">num</span></h6>
+                <h6>Wind Speed: <span id="currentWindSpeed">num</span></h6>
+                <h6>UV Index: <span id="currentUVIndex">num</span></h6>
             </div>
-
-            <!-- forecast -->
+            <!-- forecast info -->
             <div class="forecast">
-                <h1>5-Day Forecast:</h1>
-
+                <h3>5-Day Forecast:</h3>
+                <!-- cards -->
                 <div class="card-deck">
                     <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting .</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <img id="1-icon" src="" alt="weather icon">
+                            <h5 class="card-title"><span id="1-date">tomorrows date</span></h5>
+                            <p class="card-text">Temp: <span id="1-temp">num</span></p>
+                            <p class="card-text">Humidity: <span id="1-humid">num</span></p>
                         </div>
                     </div>
                     <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text
-                                content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <img id="2-icon" src="" alt="weather icon">
+                            <h5 class="card-title"><span id="2-date">tomorrows date</span></h5>
+                            <p class="card-text">Temp: <span id="2-temp">num</span></p>
+                            <p class="card-text">Humidity: <span id="2-humid">num</span></p>
                         </div>
                     </div>
                     <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                            </p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <img id="3-icon" src="" alt="weather icon">
+                            <h5 class="card-title"><span id="3-date">tomorrows date</span></h5>
+                            <p class="card-text">Temp: <span id="3-temp">num</span></p>
+                            <p class="card-text">Humidity: <span id="3-humid">num</span></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <img id="4-icon" src="" alt="weather icon">
+                            <h5 class="card-title"><span id="4-date">tomorrows date</span></h5>
+                            <p class="card-text">Temp: <span id="4-temp">num</span></p>
+                            <p class="card-text">Humidity: <span id="4-humid">num</span></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <img id="5-icon" src="" alt="weather icon">
+                            <h5 class="card-title"><span id="5-date">tomorrows date</span></h5>
+                            <p class="card-text">Temp: <span id="5-temp">num</span></p>
+                            <p class="card-text">Humidity: <span id="5-humid">num</span></p>
                         </div>
                     </div>
                 </div>
         </aside>
-
-
-        </div>
     </main>
 
 
@@ -97,7 +106,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-   
+
     <script src="./assets/app.js"></script>
 </body>
 
