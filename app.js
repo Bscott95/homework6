@@ -1,7 +1,5 @@
 $(document).ready(function () {
     // variables
-    // Boston is the default location
-    let location = "Boston" 
     const APIKey = "78d4820b52a05a5e039fd595437c5ac0";
     let cityCount = 0
     let citiesIncluded = []
@@ -43,7 +41,9 @@ $(document).ready(function () {
             let wsmph = (response.current.wind_speed * 2.237).toFixed(2);
             $('#currentWindSpeed').text(wsmph + "mph")
             $('#currentHumidity').text(response.current.humidity + " %")
-            $('#currentUVIndex').text(response.current.uvi)  
+            let UVI = response.current.uvi
+            $('#currentUVIndex').text(UVI)
+            uviBackgroundSet(UVI)  
             // retrieves the current and timezone offset value in Unix UTC 
             // use the Date object and toUTCString method to convert the time
             // multiply by 1000 because Date works in miliseconds.
@@ -75,6 +75,17 @@ $(document).ready(function () {
         return convertedTemp
     }
 
+    // takes in a UVI value and sets the bg color based on the severity
+    function uviBackgroundSet(UVI){
+        if(UVI>7){
+            $('#currentUVIndex').css("background-color", "red")
+        } else if (UVI<4){
+            $('#currentUVIndex').css("background-color", "green")
+        } else {
+            $('#currentUVIndex').css("background-color", "yellow")
+        }
+    }
+
     // appends searched cities to the left aside. Takes in a location variable of the city searched. 
     // limits the number of cities that can be added and searched by updating and checking variable cityCount
     // pushes the location to the array citiesIncluded
@@ -98,13 +109,15 @@ $(document).ready(function () {
         let loc = $('#locVal').val()
         latLongPull(loc)
         $('#locVal').text('')
+        localStorage.setItem('city', loc);
     }); 
 
     // when clicking on a previously searched city, pulls cities weather information back up
     $(document).on('click', `.list-group-item`, function(event){
         latLongPull(event.target.id)
+        localStorage.setItem('city', loc);
     })
 
-    // function call with the default location - currently Boston
-    latLongPull(location)
+    // function call with the last searched/stored location
+    latLongPull(localStorage.getItem('city'))
 })
